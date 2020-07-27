@@ -1,0 +1,41 @@
+<header class="header">
+  <mat-toolbar class="toolbar">
+    <div class="logo"
+         routerLink="/home">
+      <button mat-icon-button
+              class="logo__button">
+        <mat-icon class="logo__icon"
+                  svgIcon="logo"></mat-icon>
+      </button>
+      <span class="logo__text">Solovei Web</span>
+    </div>
+    <button mat-icon-button
+            class="menu__main-button"
+            [matMenuTriggerFor]="accountMenu">
+      <mat-icon class="menu__icon">menu</mat-icon>
+    </button>
+
+    <mat-menu #accountMenu>
+      <button mat-menu-item
+              class="menu__button"
+              routerLink="/auth/sign-in"
+              (click)="onSignIn()">
+        <mat-icon>login</mat-icon>
+        Sign in
+      </button>
+      <button mat-menu-item
+              class="menu__button"
+              routerLink="/profile">
+        <mat-icon>account_box</mat-icon>
+        Profile
+      </button>
+      <button mat-menu-item
+              class="menu__button"
+              (click)="onSignOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        Sign out
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</header>
+
